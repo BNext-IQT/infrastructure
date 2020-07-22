@@ -10,7 +10,4 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  && CFLAGS="-g0 -O3 -Wl,--strip-all -I/usr/include:/usr/local/include -L/usr/lib:/usr/local/lib" \
     pip3 install --compile --no-cache-dir --global-option=build_ext \
        --global-option="-j 4" numpy pandas scikit-learn tqdm \
- && apt-get remove -y python3-dev build-essential cmake \
-      libopenblas-openmp-dev gfortran libffi-dev \
- && apt-get autoremove -y \
  && rm -rf /var/lib/apt/lists/* /tmp/*
